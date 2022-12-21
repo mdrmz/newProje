@@ -5,6 +5,7 @@
 #include <iterator>
 #include <list>
 
+
 using namespace std;
 
 class Hero
@@ -30,7 +31,7 @@ public:
 	}
 	void karaktersec();
 
-	// set ve get methodlar�n� yazd�m
+	// set ve get methodlarını yazdım
 	int getDamege()
 	{
 		return  damege;
@@ -83,16 +84,16 @@ void Hero::karaktersec()
 	int weapon;
 	int armor;
 
-	cout << "Hangi Karaketri Se�mek �stiyrosunuz?" << endl << endl;
+	cout << "Hangi Karaketri Seçmek İstiyrosunuz?" << endl << endl;
 
 	cout << "********************Heros*************************" << endl;
-	cout << "\t1.Bozay�\t\t\t\t |\nZ�rh: 50\t\t\t\t\t |\nHasar : 5\t\t\t\t\t |\nSilah G�c� : 2\t\t\t\t\t |\nSilah Ad� : Mavi Pen�e" << "\t\t\t\t |" << endl;
+	cout << "\t1.Bozayı\t\t\t\t |\nZırh: 50\t\t\t\t\t |\nHasar : 5\t\t\t\t\t |\nSilah Gücü : 2\t\t\t\t\t |\nSilah Adı : Mavi Pençe" << "\t\t\t\t |" << endl;
 	cout << "\t\t\t\t\t\t |" << endl;
 	cout << "**************************************************" << endl;
 
 
 	cout << "********************Heros*************************" << endl;
-	cout << "\t2.Ay �avas��s�\t\t\t\t |\nZ�rh: 20\t\t\t\t\t |\nHasar : 10\t\t\t\t\t |\nSilah G�c� : 3\t\t\t\t\t |\nSilah Ad� : Gece Oku" << "\t\t\t\t |" << endl;
+	cout << "\t2.Ay Şavasçısı\t\t\t\t |\nZırh: 20\t\t\t\t\t |\nHasar : 10\t\t\t\t\t |\nSilah Gücü : 3\t\t\t\t\t |\nSilah Adı : Gece Oku" << "\t\t\t\t |" << endl;
 	cout << "\t\t\t\t\t\t |" << endl;
 	cout << "**************************************************" << endl;
 
@@ -100,15 +101,15 @@ void Hero::karaktersec()
 
 
 	cout << "********************Heros*************************" << endl;
-	cout << "\t3.Kara B�y�c�\t\t\t\t |\nZ�rh: 5\t\t\t\t\t\t |\nHasar : 1\t\t\t\t\t |\nSilah G�c� : 9\t\t\t\t\t |\nSilah Ad� : Merlin Asa�" << "\t\t\t\t |" << endl;
+	cout << "\t3.Kara Büyücü\t\t\t\t |\nZırh: 5\t\t\t\t\t\t |\nHasar : 1\t\t\t\t\t |\nSilah Gücü : 9\t\t\t\t\t |\nSilah Adı : Merlin Asaı" << "\t\t\t\t |" << endl;
 	cout << "\t\t\t\t\t\t |" << endl;
 	cout << "**************************************************" << endl;
 
 	cin >> id;
 	if (id == 1)
 	{
-		string weaponName = "Mavi Pen�e";
-		string name = "Bozay�";
+		string weaponName = "Mavi Pençe";
+		string name = "Bozayı";
 		int damege = 5;
 		int weapon = 2;
 		int armor = 50;
@@ -117,7 +118,7 @@ void Hero::karaktersec()
 	if (id == 2)
 	{
 		string weaponName = "Gece Oku";
-		string name = "Ay �avas��s�";
+		string name = "Ay Şavasçısı";
 		int damege = 10;
 		int weapon = 3;
 		int armor = 20;
@@ -125,19 +126,19 @@ void Hero::karaktersec()
 	}
 	if (id == 3)
 	{
-		string weaponName = "Merlin Asa�";
-		string name = "Kara B�y�c�";
+		string weaponName = "Merlin Asaı";
+		string name = "Kara Büyücü";
 		int damege = 1;
 		int weapon = 9;
 		int armor = 5;
 		Hero(weaponName, name, id, damege, weapon, armor);
 	}
-} // hero �e�eme methodu
+} // hero şeçeme methodu
 
 
 
 
-class Location  // nerede oldugunu bilmek i�in bir abstarct class olu�turdum ve burda extensdds i�lemi uygulacag�m
+class Location  // nerede oldugunu bilmek için bir abstarct class oluşturdum ve burda extensdds işlemi uygulacagım
 {
 protected:
 	Hero hero;
@@ -167,6 +168,7 @@ public:
 	}
 
 	bool getLocation()
+
 	{
 		return true;
 	}
@@ -175,21 +177,21 @@ public:
 class SafeHouse : public NormLoc
 {
 public:
-	SafeHouse(Hero hero) :NormLoc(hero, "G�venli ev") {}
+	SafeHouse(Hero hero) :NormLoc(hero, "Güvenli ev") {}
 
 	bool getLocation()
 	{
 
 		hero.setARmor(hero.getArmor());
 		cout << "Can Doldu" << endl;
-		cout << "Yenilenmi� Can�n�z : " + hero.getArmor();
+		cout << "Yenilenmiş Canınız : " + hero.getArmor();
 		return true;
 
 	}
 };
 
 
-// burada Canavarlar�n ait olan t�m �zelkleri bir class da toplad�m ve burdan extends ettim
+// burada Canavarların ait olan tüm özelkleri bir class da topladım ve burdan extends ettim
 class Monster {
 private:
 	string name;
@@ -207,7 +209,7 @@ public:
 
 	int MonsterCount()
 	{
-		// Bu fonkisiyonun amc� Bize Kar��m�za KA� adet D��man ��kart�cak RAnd�m SAy� �reticek
+		// Bu fonkisiyonun amcı Bize Karşımıza KAç adet Düşman Çıkartıcak RAndım SAyı Üreticek
 
 		int Count;
 		for (int i = 0; i <= 3; i++)
@@ -259,7 +261,7 @@ public:
 	}
 };
 
-// Buras� Monster Classtan T�rettigimiz D��manlar Burada Extends i�lemi uygulad�k
+// Burası Monster Classtan Türettigimiz Düşmanlar Burada Extends işlemi uyguladık
 class Vampire : public Monster {
 public:
 
@@ -310,45 +312,45 @@ public:
 	{
 		string input;
 		int mnsCount = mns.MonsterCount();
-		cout << "SU an Burdas�n�z : " + getName() << endl;
-		cout << "Dikatli ol " + mnsCount << " Kadar D��man var" + mns.getName() + " ya��yor" << endl;
-		cout << "�ava� i�in <s> kullan" << endl;
-		cout << "Ka�mak i�in <k> kullan" << endl;
+		cout << "SU an Burdasınız : " + getName() << endl;
+		cout << "Dikatli ol " + mnsCount << " Kadar Düşman var" + mns.getName() + " yaşıyor" << endl;
+		cout << "Şavaş için <s> kullan" << endl;
+		cout << "Kaçmak için <k> kullan" << endl;
 		cin >> input;
 
 	}
 
 	void   playerStats() {
-		// tamamlanmad�
+		// tamamlanmadı
 		cout << endl;
 		cout << "========================" << endl;
 		cout << endl;
-		cout << "�sminiz: " + hero.getName() << endl;
-		cout << "Sagl�k : " + hero.getArmor() << endl;
+		cout << "İsminiz: " + hero.getName() << endl;
+		cout << "Saglık : " + hero.getArmor() << endl;
 		cout << "Senin Vurdugun " + hero.getDamege() << endl;
 		cout << "Paran: " + hero.getodul() << endl;
-		//cout << "z�rh";// buraya inv cl�as� olu�tur �yle bak
+		//cout << "zırh";// buraya inv clşası oluştur öyle bak
 			//cout << "silkah;
 	}
 	void  enmeyStast()
 	{
-		// buras� canvarlar�   degerlerini g�recegimiz yer tamamnland�
+		// burası canvarları   degerlerini görecegimiz yer tamamnlandı
 		cout << mns.getName() + " degerleri: " << endl;
 		cout << endl;
 		cout << "========================" << endl;
 		cout << endl;
 		cout << "Can: " + mns.getHealty() << endl;
 		cout << "Hasar: " + mns.getDamage() << endl;
-		cout << "�d�l" + mns.getOdul() << endl;
+		cout << "Ödül" + mns.getOdul() << endl;
 	}
 
 	void afterHit()
-		// sald�rdan sonra ne oldugu tamanland�
+		// saldırdan sonra ne oldugu tamanlandı
 	{
 		cout << " Karakter ismi:" + hero.getName() << endl;
-		cout << " Karakter Hasar�: " + hero.getDamege() << endl;
-		cout << "Karakter Sagl�kg� : " + hero.getArmor() << endl;
-		cout << "Karakter Paras�: " + hero.getodul() << endl;
+		cout << " Karakter Hasarı: " + hero.getDamege() << endl;
+		cout << "Karakter Saglıkgı : " + hero.getArmor() << endl;
+		cout << "Karakter Parası: " + hero.getodul() << endl;
 
 	}
 	bool combat(int mnsCount)
@@ -361,7 +363,7 @@ public:
 			enmeyStast();
 			while (hero.getArmor() > 0 && mns.getHealty() > 0)
 			{
-				cout << "<V> vur veya <K> ka�" << endl;
+				cout << "<V> vur veya <K> kaç" << endl;
 				cin >> input;
 				if (input == 'v')
 				{
@@ -373,11 +375,11 @@ public:
 					}
 
 					mns.setHealty(mns.getHealty() - hero.getDamege());
-					cout << hero.getName() + " CAn� :" << hero.getArmor() << endl;
+					cout << hero.getName() + " CAnı :" << hero.getArmor() << endl;
 					cout << endl;
 					cout << "Canvar size Vurdu" << endl;
 					hero.setARmor(hero.getArmor() - mns.getDamage());
-					cout << mns.getName() + " Can� : " << mns.getHealty();
+					cout << mns.getName() + " Canı : " << mns.getHealty();
 					cout << endl;
 				}
 				else
@@ -387,21 +389,21 @@ public:
 			}
 			if (mns.getHealty() < 0 && hero.getArmor() > 0)
 			{
-				cout << "T�m D���malr� yendiniz" << endl;
-				cout << "Hesab�n�za" + mns.getOdul() * mns.MonsterCount() << endl;
+				cout << "Tüm Düşümalrı yendiniz" << endl;
+				cout << "Hesabınıza" + mns.getOdul() * mns.MonsterCount() << endl;
 				int MoneyGeldi = mns.getOdul() * mns.MonsterCount();
 
 
 				hero.setodul(MoneyGeldi + hero.getodul());
-				cout << "G�ncel Para: " + hero.getodul() << endl;
+				cout << "Güncel Para: " + hero.getodul() << endl;
 				mns.setHealty(defMnsHelty);
 
-				// Dosyalama i�lmlerini vurada ba�l�yorum
+				// Dosyalama işlmlerini vurada başlıyorum
 				ofstream Myfile("diedMonster.txt");
-				Myfile << "T�m D���malr� yendiniz" << endl;
-				Myfile << "Hesab�n�za" + mns.getOdul() * mns.MonsterCount() << endl;
-				Myfile << "G�ncel Para: " + hero.getodul() << endl;
-				Myfile << "�ld�rd�g�n D��man" + mns.getName() << endl;
+				Myfile << "Tüm Düşümalrı yendiniz" << endl;
+				Myfile << "Hesabınıza" + mns.getOdul() * mns.MonsterCount() << endl;
+				Myfile << "Güncel Para: " + hero.getodul() << endl;
+				Myfile << "Öldürdügün Düşman" + mns.getName() << endl;
 			}
 			else
 			{
@@ -431,7 +433,7 @@ public:
 class foerst : public BattleLoc
 {
 public:
-	foerst(Hero hero) : BattleLoc(hero, "Orman", Vampire(), "ate� cubugu")
+	foerst(Hero hero) : BattleLoc(hero, "Orman", Vampire(), "ateş cubugu")
 	{
 	}
 };
@@ -461,7 +463,7 @@ public:
 
 class ToolStore : public NormLoc {
 public:
-	// burada linklist ile magazadaki itemleri s�rayalacag�z ve almak istedigi e�yalar� alacak
+	// burada linklist ile magazadaki itemleri sırayalacagız ve almak istedigi eşyaları alacak
 	ToolStore(Hero hero) : NormLoc(hero, "MAgaza")
 	{}
 	bool getLocation() {
@@ -482,8 +484,17 @@ public:
 };
 void Game::start()
 {
+	Hero hero;
+	Hero hr();
+	hero.karaktersec();
+	Location(hero);
+
+	int secim;
 	while (true)
 	{
+
+
+
 		cout << endl;
 		cout << "=======================" << endl;
 		cout << endl;
@@ -493,8 +504,41 @@ void Game::start()
 		cout << "3->   Orman <->  Belki Kar��n�za Vampir ��kabilir" << endl;
 		cout << "4->   Nehir <->  Belki Kar��n�za Ay� ��kabilir" << endl;
 		cout << "5->   Ma�aza <->  Z�rh ve Silah Sat�n Alabilirsiniz" << endl;
+		cout << "Se�iminiz : ";
+		cin >> secim;
+		cout << endl;
+
+		switch (secim) {
+		case 1: {
+			SafeHouse(hero);
+			break;
+		}
+		case 2: {
+			cave cv(hero);
+			cv.getLocation();
+
+			break;
+		}
+		case 3: {
+			foerst(hero);
+			break;
+		}
+		case 4: {
+			river(home);
+			break;
+		}
+		case 5: {
+
+			break;
+		}
+		default:
+			NormLoc(hero, "Yol");
+
+
+
+
+		}
 	}
-}
 
 
 
@@ -503,9 +547,9 @@ void Game::start()
 
 
 
-int main()
-{
-	setlocale(LC_ALL, "Turkish");
-	Hero dnm;
-	dnm.karaktersec();
-}
+	int main()
+	{
+		setlocale(LC_ALL, "Turkish");
+		Hero dnm;
+		dnm.karaktersec();
+	}
