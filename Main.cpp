@@ -15,7 +15,7 @@ public:
 	int id;
 	int damege;
 	int weapon;
-	int odul = 0;
+	int odul ;
 	int armor;
 	Hero() {};
 	Hero(string weaponName, string name, int  id, int damege, int weapon, int armaor)
@@ -210,13 +210,16 @@ public:
 
 	int MonsterCount()
 	{
+		int count;
 		// Bu fonkisiyonun amc� Bize Kar��m�za KA� adet D��man ��kart�cak RAnd�m SAy� �reticek
+		int enFazla = 3, enAz = 1;
 
-		int a;
-		srand(time(NULL));
-		a = 1 + rand() % 5;
-		return a;
+		for(int i = 0; i < 3; i++){
+		 count = rand() % (enFazla - enAz + 1) + enAz;
+		}
+		return count;
 	}
+
 	string getName()
 	{
 		return name;
@@ -296,20 +299,20 @@ private:
 protected:
 	string ItemName;
 public:
-	Hero hero1;
+	Hero hero;
 	BattleLoc(Hero hero, string name, Monster mns, string ItemName) :Location(hero)
 	{
 		this->mns = mns;
 		this->name = name;
 		this->ItemName = ItemName;
-		this->hero1 = hero;
+		this->hero = hero;
 	}
 
 	bool getLocation()
 	{
 		int mnsCount = mns.MonsterCount();
 		cout << "SU an Burdas�n�z : " + getName() << endl;
-		cout << "Dikatli ol " << mnsCount << " Adet D��man var " + mns.getName() << " 'ler ya��yor" << endl;
+		cout << "Dikatli ol " << mnsCount << " Adet Düsman var " + mns.getName() << " 'ler yasıyor" << endl;
 
 		if (combat(mnsCount)) {
 
@@ -324,10 +327,10 @@ public:
 		cout << endl;
 		cout << "========================" << endl;
 		cout << endl;
-		cout << "isminiz: " << hero1.getName() << endl;
-		cout << "Saglik : " << hero1.getArmor() << endl;
-		cout << "Senin Vurdugun " << hero1.getDamege() << endl;
-		cout << "Paran: " << hero1.getodul() << endl;
+		cout << "isminiz: " << hero.getName() << endl;
+		cout << "Saglik : " << hero.getArmor() << endl;
+		cout << "Senin Vurdugun " << hero.getDamege() << endl;
+		cout << "Paran: " << hero.getodul() << endl;
 		//cout << "z�rh";// buraya inv cl�as� olu�tur �yle bak
 			//cout << "silkah;
 	}
@@ -339,7 +342,7 @@ public:
 		cout << endl;
 		cout << "Can: " << mns.getHealty() << endl;
 		cout << "Hasar: " << mns.getDamage() << endl;
-		cout << "odul" << mns.getOdul() << endl;
+		cout << "odul " << mns.getOdul() << endl;
 	}
 
 	void afterHit()
