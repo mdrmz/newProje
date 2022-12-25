@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 class inventory {
 private:
      bool water, food, firewood;
@@ -221,6 +222,7 @@ protected:
     string name;
 public:
 
+    location() {}
     location(player player) {
         this->plyr = player;
     }
@@ -497,6 +499,11 @@ public:
         this->name = name;
         this->award = award;
     }
+
+    bool getLocation()
+    {
+        return true;
+    }
    
     void afterHit() {
 
@@ -610,6 +617,8 @@ public:
 
 class cave : public battleLoc
 {
+
+
 public:
     cave(player plyr) : battleLoc(plyr, "Mağara", zombie(), "Food")
     {
@@ -637,10 +646,13 @@ class game {
 public:
     player plyr;
     location lc;
+    game() {
+    }
+
     void start() {
         while (true) {
             cout << endl;
-            cout << "==================================================="<< endl;
+            cout << "===================================================" << endl;
             cout << endl;
             cout << "Gitmek istediğiniz mekanı seçiniz: " << endl;
             cout << "1- Güvenli Ev ---> Düşman yok, canınız yenilenir!" << endl;
@@ -659,22 +671,25 @@ public:
             switch (selectLoc) {
 
             case 1:
-                location = new safeHouse(plyr);
+                 safeHouse sf (plyr);
+                 sf.getLocation();
                 break;
             case 2:
-                location = new cave(plyr);
+                cave cv(plyr)
+                   cv.get
                 break;
             case 3:
-                location = new forest(plyr);
+                lc = forest(plyr);
                 break;
             case 4:
-                location = new river(plyr);
+                lc = river(plyr);
                 break;
             case 5:
-                location = new toolStore(plyr);
+                 toolStore  tl(plyr);
+                 tl.getLocation();
                 break;
             default:
-                location = new safeHouse(plyr);
+                lc = safeHouse(plyr);
 
             }
             if (lc.getName()._Equal("safeHouse")) {
@@ -691,5 +706,32 @@ public:
 
         }
     }
+    void login() {
+
+        cout << "Macera Oyununa Hoşgeldiniz!" << endl;
+        cout << "Savaş yerlerindeki eşyaları topla ve en son güvenli eve ulaş!" << endl;
+        cout << "Oyuna başlamak için isminizi giriniz: " << endl;
+        string name;
+        cin >> name;
+        player pl(name);
+        pl.selectChar();
+        start();
+
+
+
+    
+    }
+    
+
+
+    
 };
+
+int main() {
+
+    game g1;
+    g1.login();
+
+
+}
 
