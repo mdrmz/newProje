@@ -4,5 +4,5 @@
 
 <p align="center"> 
   Visitor count<br>
-  <img src="https://github.com/mdrmz/newProje/blob/main/b.html" />
+  <img src="https://profile-counter.glitch.me/insolitum/count.svg" />
 </p>
